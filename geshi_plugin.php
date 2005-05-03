@@ -38,7 +38,10 @@ function GeshiSyntaxColorer_popup_help($name,$helpvar,$windowW,$windowH) {
 }
 
 
-// And now for the filters
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
+remove_filter('comment_text', 'wpautop');
+
 add_filter('the_content', 'GeshiSyntaxColorer', 6);
 add_filter('the_excerpt', 'GeshiSyntaxColorer', 6);
 add_filter('comment_text', 'GeshiSyntaxColorer', 6);
